@@ -1,0 +1,1 @@
+Feng, Weijiang & Guan, Naiyang & Li, Yuan & Zhang, Xiang & Luo, Zhigang. (2017). Audio visual speech recognition with multimodal recurrent neural networks. 681-688. 10.1109/IJCNN.2017.7965918. 
