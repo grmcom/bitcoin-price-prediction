@@ -1,7 +1,8 @@
-# Bitcoin Price Prediction with Machine Learning and On-Chain Metrics
+# Exploring the Predictive Power of On-chain Metrics in Bitcoin Price Forecasting
 
-The main notebooks can be found in: src/python/main-experiment-notebooks
 This repository contains a collection of Jupyter notebooks detailing a machine learning project for predicting Bitcoin prices. The project utilizes two datasets, `ta_df` and `oc_ta_df`, which include Bitcoin prices, technical indicators, and on-chain metrics. 
+
+The main notebooks can be found in: src/python/main-experiment-notebooks.
 
 ## Content
 
