@@ -1,49 +1,24 @@
-# MCM PRACTICUM
+# Bitcoin Price Prediction with Machine Learning and On-Chain Metrics
 
-This is a template for MCM practicums.  Please read these instructions carefully.
+The main notebooks can be found in: src/python/main-experiment-notebooks
+This repository contains a collection of Jupyter notebooks detailing a machine learning project for predicting Bitcoin prices. The project utilizes two datasets, `ta_df` and `oc_ta_df`, which include Bitcoin prices, technical indicators, and on-chain metrics. 
 
-This file is written in
-[markdown](https://guides.github.com/features/mastering-markdown/).  Markdown
-is a suitable format for documents stored in git repositories.
+## Content
 
-## Instructions
+Here's a brief description of what each notebook does:
 
-You *must* do the following:
+1. **`1-exploratory.ipynb`**: This notebook is the initial exploration of our datasets. It contains visualization of data, outlier detection, correlation analysis.
 
-1 - Fork this repo.
+2. **`2-experiment_1.ipynb`**: This notebook trains BiLSTM and BiRNN models on the `ta_df` and `oc_ta_df` datasets. The objective is to quantify the impact of including on-chain metrics in the model. It provides initial insights into how on-chain metrics influence the model's predictive performance.
 
-2 - There is no need to rename your fork but if you wish to do so please use
-     the format:
+3. **`3-hypertuning_tadf_birnn.ipynb`** and **`4-hypertuning_tadf_bilstm.ipynb`**: These notebooks perform hyperparameter tuning for the BiRNN and BiLSTM models, respectively, on the `ta_df` dataset without any human intervention. The goal here is to ensure that the results from the first experiment are not merely due to the selection of hyperparameters.
 
-     2023-mcm-username
+5. **`5-experiment_2.ipynb`**: This notebook repeats the process of `2-experiment_1.ipynb`, but now using the hyperparameters obtained from the tuning notebooks (`3-hypertuning_tadf_birnn.ipynb` and `4-hypertuning_tadf_bilstm.ipynb`). The main aim is to validate the robustness of the findings - if the models still perform better on the `oc_ta_df` dataset even when tuned on the `ta_df` dataset, it confirms the robustness of our findings.
 
-replacing `username` with your School of Computing login name.
+## Usage
 
-For example, if Stephen Blott were to be doing an MCM practicum, he would rename
-his repo as:
+To reproduce the findings, run the notebooks in the order they are numbered. You'll need to have Jupyter installed, along with libraries such as pandas, numpy, matplotlib, seaborn, and scikit-learn.
 
-     2023-mcm-sblott
+## Conclusion
 
-
-You should also update the *Project description*.
-
-3 - This directory has two important sub-directories.
-
-- All of your source code should be placed in the `src` sub-directory.
-
-- All of your documentation should be placed in the `docs` sub-directory.
-
-4 - There is further important documentation in the `docs` directory.  Read that next.
-
-When you are have followed all of these instructions and are sure that you
-understand what is expected, you may replace the contents of this file with a
-brief description of your project (two or three paragraphs).
-
-## Additional Resources
-
-- Git [cheat sheet](https://gitlab.computing.dcu.ie/sblott/local-gitlab-documentation/blob/master/cheat-sheet.md)
-- Gitlab [CI environment](https://gitlab.computing.dcu.ie/sblott/docker-ci-environment) and it's [available software](https://gitlab.computing.dcu.ie/sblott/docker-ci-environment/blob/master/Dockerfile)
-- Example projects with CI configured:
-   * [Python](https://gitlab.computing.dcu.ie/sblott/test-project-python)
-   * [Java](https://gitlab.computing.dcu.ie/sblott/test-project-java)
-   * [MySql](https://gitlab.computing.dcu.ie/sblott/test-project-mysql)
+The goal of this project is to evaluate the impact of on-chain metrics for Bitcoin price prediction. On-chain metrics are found to improve model performance in both experiments.
